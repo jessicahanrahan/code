@@ -13,7 +13,7 @@ namespace code.prep.movies
         public int rating { get; set; }
         public DateTime date_published { get; set; }
 
-        public List<Movie> CreateSortList<T>(
+        public static List<Movie> CreateSortList<T>(
             IEnumerable<Movie> dataSource,
             string fieldName, SortDirection sortDirection)
         {
@@ -33,7 +33,7 @@ namespace code.prep.movies
             return returnList;
         }
 
-        public List<Movie> CreateSortList<T>(
+        public static List<Movie> CreateSortList<T>(
             IEnumerable<Movie> dataSource,
             string fieldName1, SortDirection sortDirection1,
             string fieldName2, SortDirection sortDirection2)

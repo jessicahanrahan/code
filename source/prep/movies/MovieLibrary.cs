@@ -9,7 +9,7 @@ namespace code.prep.movies
 
         public MovieLibrary(IList<Movie> list_of_movies)
         {
-            this.movies = list_of_movies;
+            movies = list_of_movies;
         }
 
         public IEnumerable<Movie> all_movies()
@@ -130,24 +130,21 @@ namespace code.prep.movies
         public IEnumerable<Movie> sort_all_movies_by_title_descending()
         {
             IEnumerable<Movie> stMovies = all_movies();
-            Movie m = new Movie();
-            List<Movie> retMovies = m.CreateSortList<Movie>(stMovies, "title", SortDirection.Descending);
+            List<Movie> retMovies = Movie.CreateSortList<Movie>(stMovies, "title", SortDirection.Descending);
             return retMovies;
         }
 
         public IEnumerable<Movie> sort_all_movies_by_title_ascending()
         {
             IEnumerable<Movie> stMovies = all_movies();
-            Movie m = new Movie();
-            List<Movie> retMovies = m.CreateSortList<Movie>(stMovies, "title", SortDirection.Ascending);
+            List<Movie> retMovies = Movie.CreateSortList<Movie>(stMovies, "title", SortDirection.Ascending);
             return retMovies;
         }
 
         public IEnumerable<Movie> sort_all_movies_by_movie_studio_and_year_published()
         {
             IEnumerable<Movie> stMovies = all_movies();
-            Movie m = new Movie();
-            List<Movie> retMovies = m.CreateSortList<Movie>(stMovies, "production_studio", SortDirection.Ascending,
+            List<Movie> retMovies = Movie.CreateSortList<Movie>(stMovies, "production_studio", SortDirection.Ascending,
                 "date_published", SortDirection.Ascending);
             return retMovies;
         }
@@ -155,16 +152,14 @@ namespace code.prep.movies
         public IEnumerable<Movie> sort_all_movies_by_date_published_descending()
         {
             IEnumerable<Movie> stMovies = all_movies();
-            Movie m = new Movie();
-            List<Movie> retMovies = m.CreateSortList<Movie>(stMovies, "date_published", SortDirection.Descending);
+            List<Movie> retMovies = Movie.CreateSortList<Movie>(stMovies, "date_published", SortDirection.Descending);
             return retMovies;
         }
 
         public IEnumerable<Movie> sort_all_movies_by_date_published_ascending()
         {
             IEnumerable<Movie> stMovies = all_movies();
-            Movie m = new Movie();
-            List<Movie> retMovies = m.CreateSortList<Movie>(stMovies, "date_published", SortDirection.Ascending);
+            List<Movie> retMovies = Movie.CreateSortList<Movie>(stMovies, "date_published", SortDirection.Ascending);
             return retMovies;
         }
     }
