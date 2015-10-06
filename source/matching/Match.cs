@@ -13,7 +13,8 @@ namespace code.matching
     public static ComparableMatchFactory<Item, AttributeType> comparable_attribute<AttributeType>(
       IGetAnAttributeValue<Item, AttributeType> accessor) where AttributeType : IComparable<AttributeType>
     {
-      return new ComparableMatchFactory<Item, AttributeType>(accessor);
+      return new ComparableMatchFactory<Item, AttributeType>(accessor,
+          attribute(accessor));
     }
   }
 }

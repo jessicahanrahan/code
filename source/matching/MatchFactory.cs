@@ -3,13 +3,14 @@ using code.prep.movies;
 
 namespace code.matching
 {
-  public class MatchFactory<Item, AttributeType>
+  public class MatchFactory<Item, AttributeType> : ICreateMatchers<Item, AttributeType>
   {
     IGetAnAttributeValue<Item, AttributeType> accessor;
-
-    public MatchFactory(IGetAnAttributeValue<Item, AttributeType> accessor)
+      IAnonymousMatch<Item> mech; 
+    public MatchFactory(IGetAnAttributeValue<Item, AttributeType> accessor, IAnonymousMatch<Item> mech)
     {
       this.accessor = accessor;
+        this.mech = mech;
     }
 
     public IMatchAn<Item> equal_to(AttributeType value)

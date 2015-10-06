@@ -3,7 +3,7 @@ using code.matching;
 
 namespace code.prep.movies
 {
-  public class AnonymousMatch<T> : IMatchAn<T>
+  public class AnonymousMatch<T> : IMatchAn<T>, IAnonymousMatch<T>
   {
     Criteria<T> criteria;
 
