@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 
 namespace code.prep.movies
 {
-    public class Movie
+    public class Movie : IEquatable<Movie>
     {
         public string title { get; set; }
         public ProductionStudio production_studio { get; set; }
@@ -66,6 +66,27 @@ namespace code.prep.movies
             };
             returnList.Sort(compare);
             return returnList;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Movie);
+        }
+
+        public bool Equals(Movie other)
+        {
+            if (other == null) return false;
+            return ReferenceEquals(this, other) || equal_to_non_null(other);
+        }
+
+        bool equal_to_non_null(Movie other)
+        {
+            return title.Equals(other.title);
+        }
+
+        public override int GetHashCode()
+        {
+            return title.GetHashCode();
         }
     }
 }
