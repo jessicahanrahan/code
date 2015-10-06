@@ -47,9 +47,15 @@ namespace code.prep.movies
 
     public static IMatchAn<Movie> is_published_by_pixar_or_disney()
     {
-      throw new NotImplementedException();
 //      return x => is_published_by(ProductionStudio.Pixar)(x) ||
 //                  is_published_by(ProductionStudio.Disney)(x);
+
+        throw new NotImplementedException();
+        //return new IsCriteria<Movie>(x =>
+        //{
+        //    is_published_by(ProductionStudio.Pixar).matches(x) ||
+        //    is_published_by(ProductionStudio.Disney).matches(x);
+        //});
     }
   }
 }

@@ -9,18 +9,35 @@ using code.matching;
 
 namespace code.prep.movies
 {
-    class IsCriteria : IMatchAn<Movie>
+    public class IsCriteria<Item> : IMatchAn<Item>
     {
-        Criteria<Movie> criteria;
+        Criteria<Item> criteria;
 
-        public IsCriteria(Criteria<Movie> criteria)
+        public IsCriteria(Criteria<Item> criteria)
         {
             this.criteria = criteria;
         }
 
-        public bool matches(Movie item)
+        public bool matches(Item item)
         {
             return criteria.Invoke(item);
+        }
+    }
+
+    public class OrMatch<Item> : IMatchAn<Item>
+    {
+        IMatchAn<Item> left;
+        IMatchAn<Item> right;
+
+        public OrMatch(IMatchAn<Item> left, IMatchAn<Item> right)
+        {
+            this.left = left;
+            this.right = right;
+        }
+
+        public bool matches(Item item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
