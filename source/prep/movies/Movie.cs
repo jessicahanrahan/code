@@ -45,7 +45,7 @@ namespace code.prep.movies
       return new IsInGenre(genre);
     }
 
-    public static Criteria<Movie> is_published_by_pixar_or_disney()
+    public static IMatchAn<Movie> is_published_by_pixar_or_disney()
     {
       throw new NotImplementedException();
 //      return x => is_published_by(ProductionStudio.Pixar)(x) ||
