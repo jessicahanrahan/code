@@ -27,7 +27,7 @@ namespace code.matching
 
     public IMatchAn<Item> not_equal_to(AttributeType value)
     {
-      throw new System.NotImplementedException();
-    }
+        return equal_to(value).not();
+     }
   }
 }
