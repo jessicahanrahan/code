@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using code.prep.movies;
 
 namespace code.matching
@@ -18,7 +19,16 @@ namespace code.matching
 
     public IMatchAn<Item> equal_to_any(params AttributeType[] values)
     {
-      throw new System.NotImplementedException();
+        IList<IMatchAn<Item>> match_list = new List<IMatchAn<Item>>();
+        IMatchAn<Item> retVal = null;
+        foreach (AttributeType val in values)
+        {
+             match_list.Add(equal_to(val));
+        }
+            
+            //get iMatchans
+            //then use OrMatch between them to build 1 imatcha
+        return ;
     }
   }
 }
