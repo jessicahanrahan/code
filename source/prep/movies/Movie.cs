@@ -35,19 +35,22 @@ namespace code.prep.movies
       return title.Equals(other.title);
     }
 
-    public static Criteria<Movie> is_published_by(ProductionStudio studio)
+    public static IMatch<Movie> is_published_by(ProductionStudio studio)
     {
-      return x => x.production_studio == studio;
+      return new IsPublishedBy(studio);
     }
 
-    public static Criteria<Movie> is_in_genre(Genre genre)
+    public static IMatch<Movie> is_in_genre(Genre genre)
     {
-      return x => x.genre == genre;
+      return new IsInGenre(genre);
     }
 
     public static Criteria<Movie> is_published_by_pixar_or_disney()
     {
         return x => x.production_studio == ProductionStudio.Pixar || x.production_studio == ProductionStudio.Disney;
+        // ugly version below:
+        //return x => is_published_by(ProductionStudio.Pixar).Invoke(x) || 
+        //            is_published_by(ProductionStudio.Disney).Invoke(x);
     }
   }
 }
