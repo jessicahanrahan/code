@@ -274,7 +274,7 @@ namespace code.prep.movies
       It by_title_descending = () =>
       {
         var comparer = Comparator<Movie,string>.sort_by(x => x.title).descending();
-        var results = sut.sort_all_movies_by_title_descending();
+        var results = sut.all_movies().all_items_sorted(comparer);
 
         results.should().contain_only_in_order(yours_mine_and_ours, theres_something_about_mary, shrek,
           pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
