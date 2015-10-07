@@ -7,9 +7,14 @@ using code.matching;
 
 namespace code.sorting
 {
-    class Comparator<ItemToCompare, AttributeType>
+    public class Comparator<ItemToCompare, AttributeType>
     {
         IGetAnAttributeValue<ItemToCompare, AttributeType> accessor;
+
+        public Comparator(IGetAnAttributeValue<ItemToCompare, AttributeType> accessor)
+        {
+            this.accessor = accessor;
+        }
 
         public static void sort_by(Func<object, object> func)
         {
