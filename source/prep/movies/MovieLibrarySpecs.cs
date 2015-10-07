@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using code.enumerables;
 using code.matching;
+using code.sorting;
 using developwithpassion.specifications.assertions;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.observations;
@@ -271,6 +273,7 @@ namespace code.prep.movies
 
       It by_title_descending = () =>
       {
+        var comparer = Comparator<Movie,string>.sort_by(x => x.title).descending();
         var results = sut.sort_all_movies_by_title_descending();
 
         results.should().contain_only_in_order(yours_mine_and_ours, theres_something_about_mary, shrek,
