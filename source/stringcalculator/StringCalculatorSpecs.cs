@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using developwithpassion.specifications.assertions;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.observations;
@@ -56,14 +58,24 @@ namespace code.stringcalculator
 
             Establish c = () =>
             {
+                input_values = depends.on<ICreateInputValuesFromString>();
                 input_value_string = "1,2";
+
+                IList<InputValue> 
+                input_values.setup()
             };
 
             Because b = () =>
                 result = sut.add(input_value_string);
 
+            It converts_string_into_inputs = () =>
+                
+
             It returns_the_sum_when_provided_with_two_inputs = () =>
-                result.ShouldEqual(3); 
+                result.ShouldEqual(3);
+
+            static IEnumerable<InputValue> input_values;
+            static ICreateInputValuesFromString input_value_factory;
         }
     }
 }
