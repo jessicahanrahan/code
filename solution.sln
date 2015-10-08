@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "code", "source/edit.csproj", "{922EF2FE-820B-4ED5-9D64-7D716E135719}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edit", "source\edit.csproj", "{922EF2FE-820B-4ED5-9D64-7D716E135719}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +24,18 @@ Global
 		{922EF2FE-820B-4ED5-9D64-7D716E135719}.Release|Any CPU.Build.0 = Release|Any CPU
 		{922EF2FE-820B-4ED5-9D64-7D716E135719}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{922EF2FE-820B-4ED5-9D64-7D716E135719}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|.NET.Build.0 = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|.NET.ActiveCfg = Release|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|.NET.Build.0 = Release|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{357983B7-2D2B-4044-951A-7004364F2549}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

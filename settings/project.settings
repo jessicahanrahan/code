@@ -132,7 +132,7 @@ configure({
     present: true,
     enable_in_project_files: true,
     use_for_deploys: true,
-    path: 'e:\utils\iis_express\iisexpress.exe',
+    path: 'c:\utils\iis_express\iisexpress.exe',
   },
 
   libs: delayed do
@@ -179,6 +179,8 @@ configure({
   end,
 
   project: "code",
+
+  web_project: "store",
 
   git: {
     provider: 'github', #possible values [github, bitbucket]

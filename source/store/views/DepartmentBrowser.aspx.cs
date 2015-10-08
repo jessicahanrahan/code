@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using System.Web.UI;
 
-namespace app.ui.views
+namespace ui.views
 {
   public partial class DepartmentBrowser : Page
   {

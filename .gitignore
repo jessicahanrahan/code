@@ -62,3 +62,5 @@ register_endpoints.js
 /bower.json
 /Vagrantfile
 /automation/vagrant_scripts
+/.vs
+/UpgradeLog*

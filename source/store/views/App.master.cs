@@ -1,6 +1,6 @@
 using System.Web.UI;
 
-namespace app.web.ui.views
+namespace ui.views
 {
     public class App : MasterPage
     {

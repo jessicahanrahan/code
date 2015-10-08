@@ -2,5 +2,6 @@
 {
   public class MainDepartment
   {
+    public string name { get; set; }
   }
 }

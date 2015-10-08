@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using code.stubs;
 
 namespace code.web
 {
@@ -7,6 +8,10 @@ namespace code.web
   {
     IEnumerable<IHandleOneWebRequest> all_the_handlers;
     ICreateAHandlerWhenNoneExistForARequest create_the_missing_handler;
+
+    public WebHandlers():this(new StubSetOfHandlers(), Startup.missing_hanlder_builder)
+    {
+    }
 
     public WebHandlers(IEnumerable<IHandleOneWebRequest> all_the_handlers,
       ICreateAHandlerWhenNoneExistForARequest special_case)

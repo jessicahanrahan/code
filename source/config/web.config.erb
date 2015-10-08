@@ -1,70 +1,36 @@
 <?xml version="1.0"?>
 <configuration>
-  <appSettings>
-	<% settings.appconfig_settings.each do | setting |%>
-	  <add key='<%= setting[:name] %>' value="<%= setting[:value] %>" />
-	<% end %>
-	
-  </appSettings> 
-  <connectionStrings>
-    <add name="Code" 
-      connectionString="<%= settings.database.connection_string %>"
-      providerName="System.Data.SqlClient" />
-  </connectionStrings>
   <system.web>
-    <trace enabled="<%= settings.web.trace_enabled %>" requestLimit="40" localOnly="false" />
-    <%if settings.environment.name != "prod" %>
-    	<customErrors mode="Off"/>
-    <% end %>
-    <pages pageBaseType="System.Web.Mvc.WebViewPage">
-    </pages>
     <httpRuntime targetFramework="4.5" />
     <compilation debug="true" targetFramework="4.5.1" />
-    <authentication mode="Windows"/>
-  </system.web>
-  <system.webServer>
-    <handlers>
-      <add name="front_controller" path="*"
-        verb="*"
-        type="code.web.aspnet.HandlerFactory, <%= settings.project %>"/>
-    </handlers> 
-     <staticContent>
-      <remove fileExtension=".woff" />
-      <remove fileExtension=".woff2" />
-      <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
-      <mimeMap fileExtension=".woff2" mimeType="application/font-woff2" />
-    </staticContent>
-  </system.webServer>
-  <location path="dist">
-    <system.webServer>
-    <handlers>
-      <remove name="front_controller" />
-      </handlers>
-    </system.webServer>
-  </location>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 
-      <dependentAssembly>
-        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="0.0.0.0-5.2.0.0" newVersion="5.2.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
-        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
+    <pages autoEventWireup="false">
+    </pages>
+    <authentication mode="Windows"/>
+    <% unless settings.has_iis_express %>
+    <httpHandlers>
+      <add path="*.tamu"
+        verb="*"
+        type="code.web.aspnet.AspNetRawRequestHandler, <%= settings.project %>"/>
+        </httpHandlers>
+    <% end %>
+   </system.web>
+  <system.webServer>
+    <% if settings.has_iis_express %>
+    <handlers>
+      <add name="front_controller" path="*.tamu"
+        verb="*"
+        type="code.web.aspnet.AspNetRawRequestHandler, <%= settings.project %>"/>
+        </handlers>
+    <% end %>
+  </system.webServer>
+
+  <!--<system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" warningLevel="4" type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <providerOption name="CompilerVersion" value="v4.0.30319.1"/>
+        <providerOption name="WarnAsError" value="false"/>
+      </compiler>
+    </compilers>
+    </system.codedom>-->
 </configuration>

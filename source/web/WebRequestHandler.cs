@@ -4,6 +4,10 @@
   {
     IGetWebRequestHandlers handlers;
 
+    public WebRequestHandler():this(new WebHandlers())
+    {
+    }
+
     public WebRequestHandler(IGetWebRequestHandlers handlers)
     {
       this.handlers = handlers;

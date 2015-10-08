@@ -1,14 +1,16 @@
-configure({
-  web_unit: {
-    bin_folder: delayed { settings.web.vs_output_dir },
-    physical_path: "source/ui",
-    target_path: delayed { settings.web.staging_dir },
+{
+  bin_folder: "source/store/bin",
+  source_path: "source/store",
+  physical_path: "source/store",
+  intermediary_path: "web_intermediate",
+  target_path: "web_staging",
+  updateable: true,
+  force: true,
 
-    dependent_compiles: [
-      "compile_units/all.compile"
-    ],
+  dependent_compiles: [
+    "compile_units/all.compile"
+  ],
 
-    references: delayed { settings.all_references },
-    target: :library
-  }
-})
+  references: delayed { settings.all_references },
+  target: :library
+}
