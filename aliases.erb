@@ -10,6 +10,8 @@ function ch_root(){
   cd $ROOT
 }
 
+alias root=ch_root
+#
 #Aliases for thor tasks
 
 alias boweri='root;cd source;npm run-script postinstall'
@@ -17,8 +19,12 @@ alias boweri='root;cd source;npm run-script postinstall'
 #Compile aliases
 alias cs='thor compile:selection'
 alias ccw='root;thor processes:kill iisexpress node;thor automation:clean;cw'
-alias root=ch_root
 alias automation='root;cd automation'
+
+alias cw='root;_compile_web'
+alias siis='thor processes:kill iisexpress'
+alias riis='thor processes:kill iisexpress;_start_iis'
+
 
 #Load order aliases
 alias dlo='root;cd source;node dump_load_order'
@@ -75,6 +81,14 @@ function start_it_all(){
 
 function _powershell(){
   start powershell -NoExit -WindowStyle normal -Command $*
+}
+
+function _compile_web(){
+  thor compile:web compile_units/web.compile
+}
+
+function _start_iis(){
+  _powershell start_web_app.bat
 }
 
 <% settings.extra_aliases.each do |the_alias| %>
