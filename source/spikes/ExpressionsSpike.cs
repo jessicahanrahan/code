@@ -21,10 +21,13 @@ namespace code.spikes
 
         var number_2 = Expression.Constant(2);
 
+        var zero = Expression.Constant(0);
 
-
-
-        Func<int, bool> generated = ///
+        Func<int, bool> generated = x =>
+        {
+            Expression exp = zero.Equals(x.)
+            return false;
+        };
 
         generated(2).ShouldBeTrue();
       };
