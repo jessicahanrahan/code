@@ -4,11 +4,11 @@
 
   public interface IProcess<in Element>
   {
-    void process(Element node); 
+    void process(Element node);
   }
 
-  public interface IProcessAndMaintainState<in Element, out StepState> : IProcess<Element>
+  public interface IProcessAndMaintainState<in Item, out Result> : IProcess<Item>
   {
-    StepState state { get; } 
+    Result result { get; }
   }
 }
