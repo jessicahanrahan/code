@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web;
 using System.Web.Compilation;
-using code.web;
 using code.web.aspnet;
 using code.web.core;
 
@@ -23,10 +22,14 @@ namespace code.stubs
       () => HttpContext.Current;
 
     public static ICreatePageInstances create_page_instance = (path, type) =>
-      (IHttpHandler)BuildManager.CreateInstanceFromVirtualPath(path, type);
+      (IHttpHandler) BuildManager.CreateInstanceFromVirtualPath(path, type);
 
     class StubRequest : IProvideDetailsToHandlers
     {
+      public Input map<Input>()
+      {
+        return Activator.CreateInstance<Input>();
+      }
     }
   }
 }

@@ -39,8 +39,6 @@ namespace code.features.catalog_browsing
       Because b = () =>
         sut.process(request);
 
-      It gets_the_main_departments = () =>
-        departments.should().have_received(x => x.main_departments());
 
       It displays_the_main_departments = () =>
         display_engine.should().have_received(x => x.display(main_departments));

@@ -12,5 +12,13 @@ namespace code.features.catalog_browsing.stubs
         name = x.ToString("Main Department 0")
       });
     }
+
+    public IEnumerable<Department> departments_in(DepartmentsInDepartmentInput input)
+    {
+      return Enumerable.Range(1, 100).Select(x => new Department
+      {
+        name = x.ToString("Sub Department 0")
+      });
+    }
   }
 }

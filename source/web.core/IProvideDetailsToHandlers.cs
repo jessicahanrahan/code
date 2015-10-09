@@ -2,6 +2,6 @@
 {
   public interface IProvideDetailsToHandlers
   {
-     
+    Input map<Input>();
   }
 }

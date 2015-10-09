@@ -14,6 +14,7 @@ namespace code.web.core.stubs
 
     public IEnumerator<IHandleOneWebRequest> GetEnumerator()
     {
+      yield return new RequestHandler(x => true, Dependencies.fetch.an<ViewDepartmentsInADepartment>());
       yield return new RequestHandler(x => true, Dependencies.fetch.an<ViewMainDepartments>());
     }
   }
