@@ -26,24 +26,6 @@ namespace code.core
       return visitor.result;
     }
 
-    public class CombinedVisitor<Item> : IProcess<Item>
-    {
-      IProcess<Item> first;
-      IProcess<Item> second;
-
-      public CombinedVisitor(IProcess<Item> first, IProcess<Item> second)
-      {
-        this.first = first;
-        this.second = second;
-      }
-
-      public void process(Item node)
-      {
-        first.process(node);
-        second.process(node);
-      }
-    }
-
     public class LoggingVisitor<Item> : IProcess<Item>
     {
       IProcess<Item> original;
