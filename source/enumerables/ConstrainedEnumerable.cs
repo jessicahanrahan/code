@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using code.matching;
+using code.matching.core;
 
 namespace code.enumerables
 {

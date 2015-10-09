@@ -10,7 +10,7 @@ namespace code.web.aspnet.stubs
     {
       var paths = new Dictionary<Type, string>
       {
-        {typeof(IEnumerable<MainDepartment>), "~/views/DepartmentBrowser.aspx"}
+        {typeof(IEnumerable<Department>), "~/views/DepartmentBrowser.aspx"}
       }; 
 
       if (paths.ContainsKey(typeof(Report))) return paths[typeof(Report)];

@@ -1,7 +1,7 @@
 {
-  bin_folder: "source/store/bin",
-  source_path: "source/store",
-  physical_path: "source/store",
+  bin_folder: "source/_ui/bin",
+  source_path: "source/_ui",
+  physical_path: "source/_ui",
   intermediary_path: "web_intermediate",
   target_path: "web_staging",
   updateable: true,

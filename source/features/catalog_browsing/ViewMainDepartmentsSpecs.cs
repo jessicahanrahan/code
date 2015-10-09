@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using code.web;
+using code.web.core;
 using developwithpassion.specifications.assertions;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.observations;
@@ -27,9 +28,9 @@ namespace code.features.catalog_browsing
         display_engine = depends.on<IDisplayInformation>();
         departments = depends.on<IGetDepartments>();
 
-        main_departments = new List<MainDepartment>
+        main_departments = new List<Department>
         {
-          new MainDepartment()
+          new Department()
         };
 
         departments.setup(x => x.main_departments()).Return(main_departments);
@@ -47,7 +48,7 @@ namespace code.features.catalog_browsing
       static IGetDepartments departments;
       static IProvideDetailsToHandlers request;
       static IDisplayInformation display_engine;
-      static IEnumerable<MainDepartment> main_departments;
+      static IEnumerable<Department> main_departments;
     }
   }
 }

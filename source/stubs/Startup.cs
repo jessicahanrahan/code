@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Compilation;
 using code.web;
 using code.web.aspnet;
+using code.web.core;
 
 namespace code.stubs
 {
@@ -13,7 +14,7 @@ namespace code.stubs
       return new StubRequest();
     };
 
-    public static ICreateAHandlerWhenNoneExistForARequest missing_hanlder_builder = delegate
+    public static ICreateAHandlerWhenNoneExistForARequest missing_handler_builder = delegate
     {
       throw new NotImplementedException("There is no handler that can handle this request");
     };

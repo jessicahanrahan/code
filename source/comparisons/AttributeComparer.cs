@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using code.matching;
+using code.matching.core;
 
 namespace code.comparisons
 {

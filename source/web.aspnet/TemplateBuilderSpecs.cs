@@ -1,19 +1,16 @@
 ﻿using System.Web;
-using System.Web.UI;
-using developwithpassion.specifications.assertions;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.observations;
-using developwithpassion.specifications.should;
 using Machine.Fakes.Adapters.Rhinomocks;
 using Machine.Specifications;
 
 namespace code.web.aspnet
 {
-  [Subject(typeof(WebFormsTemplateBuilder))]
+  [Subject(typeof(TemplateBuilder))]
   public class TemplateBuilderSpecs
   {
     public abstract class concern :
-      Spec.isolate_with<RhinoFakeEngine>.observe<ICreateAspxTemplateInstances, WebFormsTemplateBuilder>
+      Spec.isolate_with<RhinoFakeEngine>.observe<ICreateAspxTemplateInstances, TemplateBuilder>
     {
     }
 
@@ -32,7 +29,6 @@ namespace code.web.aspnet
           type.ShouldEqual(typeof(IDisplayA<MyReport>));
 
           return template_instance;
-          
         });
 
         template_paths.setup(x => x.get_path_to_template_for<MyReport>())
@@ -47,12 +43,10 @@ namespace code.web.aspnet
 
       It returns_the_template_instance = () =>
         result.ShouldEqual(template_instance);
-        
+
       static IGetPathsToAspxTemplates template_paths;
       static MyReport report;
-      static string path_provided;
       static string path_to_template;
-      static object type_of_page;
       static IHttpHandler result;
       static IDisplayA<MyReport> template_instance;
     }

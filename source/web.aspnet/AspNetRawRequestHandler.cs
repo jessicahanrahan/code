@@ -1,5 +1,6 @@
 ﻿using System.Web;
-using code.stubs;
+using code.containers;
+using code.web.core;
 
 namespace code.web.aspnet
 {
@@ -8,12 +9,13 @@ namespace code.web.aspnet
     IHandleAllTheWebRequests front_controller;
     ICreateAControllerRequestFromAnAspNetRequest request_builder;
 
-    public AspNetRawRequestHandler():this(new WebRequestHandler(), 
-      Startup.controller_request_builder)
+    public AspNetRawRequestHandler():this(Dependencies.fetch.an<IHandleAllTheWebRequests>(),
+      Dependencies.fetch.an<ICreateAControllerRequestFromAnAspNetRequest>())
     {
     }
 
-    public AspNetRawRequestHandler(IHandleAllTheWebRequests front_controller, ICreateAControllerRequestFromAnAspNetRequest request_builder)
+    public AspNetRawRequestHandler(IHandleAllTheWebRequests front_controller,
+      ICreateAControllerRequestFromAnAspNetRequest request_builder)
     {
       this.front_controller = front_controller;
       this.request_builder = request_builder;

@@ -68,6 +68,28 @@ alias cnm='vagrant ssh -c "rm -rf /vagrant/node_modules"'
 alias clean='thor automation:clean'
 alias init='thor automation:clean'
 
+#DB aliases
+alias dbstart='thor db:start'
+alias dbstop='thor db:stop'
+alias dbseed='thor specs:run_them compile_units/all.compile --flags=include:seed'
+
+function dbr(){
+  unit=compile_units/all.compile
+  thor compile:project $unit
+  thor db:rebuild
+  thor specs:run_them $unit --flags=exclude:slow,seed
+  thor migrate:migrate $unit
+}
+
+
+#Doc aliases
+alias doc='root;cd source;grunt shell:docs;open .docs/index.html;root'
+
+#Migration aliases
+alias mgr='db_migrate $*'
+alias clean='thor automation:clean'
+alias init='thor automation:clean'
+
 alias sia='start_it_all'
 
 function start_it_all(){

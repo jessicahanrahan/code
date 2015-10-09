@@ -1,4 +1,4 @@
-﻿using code.stubs;
+﻿using code.web.core;
 
 namespace code.web.aspnet
 {
@@ -6,10 +6,6 @@ namespace code.web.aspnet
   {
     ICreateAspxTemplateInstances template_builder;
     IGetTheCurrentRequestContext get_the_current_context;
-
-    public WebFormsDisplayEngine():this(new WebFormsTemplateBuilder(), Startup.get_current_request)
-    {
-    }
 
     public WebFormsDisplayEngine(ICreateAspxTemplateInstances template_builder,
       IGetTheCurrentRequestContext get_the_current_context)

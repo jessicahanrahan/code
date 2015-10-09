@@ -9,6 +9,10 @@ configure({
     enable_in_project_files: true,
   },
 
+  # database: {
+  #   connection_string: 'Server=localhost\SQL_EXPRESS_2014;Database=code;Integrated Security=true' 
+  # },
+
   net_tools_paths: [
     '/c/Program Files (x86)',
     '/c/Program Files (x86)/MSBuild/14.0/bin',

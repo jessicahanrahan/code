@@ -6,7 +6,7 @@
   base_response_template: "source/config/csc.rsp",
 
   sources: Rake::FileList[
-    "source/migrations/**/*.cs",
+    "source/**/*.migration.cs",
     "source/test_utilities/**/*.cs"
   ].exclude(/TemporaryGenerated/).to_a,
 

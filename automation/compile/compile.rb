@@ -39,8 +39,8 @@ module Automation
         FileUtils.mkdir_p File.join(unit.intermediary_path,"dist","assets")
         intermediary_path = unit.intermediary_path
         # FileUtils.cp_r(File.join(source_folder, "dist"), intermediary_path)
-        FileUtils.cp_r("source/store/images", intermediary_path)
-        FileUtils.cp_r("source/store/views", intermediary_path)
+        FileUtils.cp_r("source/_ui/images", intermediary_path)
+        FileUtils.cp_r("source/_ui/views", intermediary_path)
         FileUtils.cp_r(File.join(source_folder, "Global.asax"), intermediary_path)
         FileUtils.cp_r(File.join(source_folder, "styles.css"), intermediary_path)
 

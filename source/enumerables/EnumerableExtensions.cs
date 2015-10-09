@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using code.matching;
-using developwithpassion.specification.specs;
+using code.matching.core;
 
 namespace code.enumerables
 {
@@ -22,7 +21,7 @@ namespace code.enumerables
       }
     }
 
-    public static IEnumerable<Item> sort_using<Item>(this IEnumerable<Item> items, 
+    public static IEnumerable<Item> sort_using<Item>(this IEnumerable<Item> items,
       IComparer<Item> comparison)
     {
       var sorted = new List<Item>(items);
@@ -37,11 +36,10 @@ namespace code.enumerables
 
     public static IEnumerable<Item> where<Item, AttributeType>(
       this IEnumerable<Item> items,
-      IGetAnAttributeValue<Item, AttributeType> accessor, 
+      IGetAnAttributeValue<Item, AttributeType> accessor,
       ICombineMatchers<Item> combination_strategy,
-      params Func<MatchCreationExtensionPoint<Item,AttributeType>, IMatchAn<Item>>[] match_builders)
+      params Func<MatchCreationExtensionPoint<Item, AttributeType>, IMatchAn<Item>>[] match_builders)
     {
-
       var extension_point = Match<Item>.attribute(accessor);
       IMatchAn<Item> criteria = NeverMatches<Item>.instance;
 

@@ -5,9 +5,9 @@ namespace code.features.catalog_browsing.stubs
 {
   public class StubDepartments : IGetDepartments
   {
-    public IEnumerable<MainDepartment> main_departments()
+    public IEnumerable<Department> main_departments()
     {
-      return Enumerable.Range(1, 100).Select(x => new MainDepartment
+      return Enumerable.Range(1, 100).Select(x => new Department
       {
         name = x.ToString("Main Department 0")
       });
