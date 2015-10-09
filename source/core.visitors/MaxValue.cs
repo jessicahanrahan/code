@@ -28,8 +28,12 @@ namespace code.core.visitors
     public void process(Item node)
     {
       if (found) return;
-      if (condition(node))
-        result = node;
+        if (condition(node))
+        {
+                result = node;
+            found = true;
+        }
+        
     }
 
     public Item result { get; private set; }
