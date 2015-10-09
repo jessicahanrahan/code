@@ -1,6 +1,6 @@
 ﻿using code.features.catalog_browsing.stubs;
 using code.web;
-using code.web.stubs;
+using code.web.aspnet;
 
 namespace code.features.catalog_browsing
 {
@@ -9,8 +9,8 @@ namespace code.features.catalog_browsing
     IGetDepartments departments;
     IDisplayInformation display_engine;
 
-    public ViewMainDepartments():this(new StubDepartments(), 
-      new StubDisplayEngine())
+    public ViewMainDepartments() : this(new StubDepartments(),
+      new WebFormsDisplayEngine())
     {
     }
 

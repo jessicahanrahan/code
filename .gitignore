@@ -64,3 +64,4 @@ register_endpoints.js
 /automation/vagrant_scripts
 /.vs
 /UpgradeLog*
+/jp.aliases

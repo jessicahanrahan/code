@@ -155,7 +155,7 @@
                 <virtualDirectory path="/" physicalPath="<%= File.expand_path("web_staging").win_path %>" />
                 </application>
                 <bindings>
-                    <binding protocol="http" bindingInformation=":8080:localhost" />
+                <binding protocol="http" bindingInformation=":<%= settings.iis_express.port %>:localhost" />
                 </bindings>
             </site>
             <siteDefaults>

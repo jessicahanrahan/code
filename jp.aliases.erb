@@ -11,7 +11,7 @@ alias cnm='find . -name "node_modules" | xargs -E {} rm -rf'
 alias thor='root;'thor' $*'
 alias grunt='root;expands;cd source;'grunt' $*'
 
-alias riis='thor processes:kill iisexpress;_start_iis;curl http://localhost:8080/blah.tamu'
+alias riis='thor processes:kill iisexpress;_start_iis;curl http://localhost:<%= settings.iis_express.port %>/blah.tamu'
 
 function push(){
   git add -A
