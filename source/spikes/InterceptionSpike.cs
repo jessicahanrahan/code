@@ -1,4 +1,4 @@
-﻿namespace code.interception
+﻿namespace code.spikes
 {
   public class InterceptionSpike
   {

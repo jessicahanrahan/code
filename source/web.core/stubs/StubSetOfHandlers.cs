@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using code.containers;
 using code.features.catalog_browsing;
+using code.features.catalog_browsing.stubs;
 
 namespace code.web.core.stubs
 {
@@ -14,8 +15,16 @@ namespace code.web.core.stubs
 
     public IEnumerator<IHandleOneWebRequest> GetEnumerator()
     {
-      yield return new RequestHandler(x => true, Dependencies.fetch.an<ViewDepartmentsInADepartment>());
-      yield return new RequestHandler(x => true, Dependencies.fetch.an<ViewMainDepartments>());
+      yield return create_report_for(new StubGetMainDepartments());
+
+      yield return create_report_for(new StubDepartmentsInDepartments());
+
+      yield return create_report_for(new StubProductsInDepartments());
+    }
+
+    IHandleOneWebRequest create_report_for<Item>(IFetchDataUsingARequest<Item> query)
+    {
+      return new RequestHandler(x => true, new ViewReport<Item>(query)); 
     }
   }
 }
